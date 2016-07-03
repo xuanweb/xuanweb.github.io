@@ -85,32 +85,31 @@
 
 
 <meta name="description" content="与CSS动画相关的知识有transform，transition，以及animation
-transform
-translate() // 移动：将HTML元素在x-y轴平面上做位移，且不会影响到其他元素
+transformCSS3 2D Transformtranslate() // 移动
 translate(x,y) 水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）
 translateX(x) 仅水平方向移动（X轴移动）
-translateY(y) 仅垂直方向移动（Y轴移动">
+translateY(y) 仅垂直方向移动（Y轴移动）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS3动画">
 <meta property="og:url" content="http://yoursite.com/2016/07/01/CSS3动画/index.html">
 <meta property="og:site_name" content="前端记忆">
 <meta property="og:description" content="与CSS动画相关的知识有transform，transition，以及animation
-transform
-translate() // 移动：将HTML元素在x-y轴平面上做位移，且不会影响到其他元素
+transformCSS3 2D Transformtranslate() // 移动
 translate(x,y) 水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）
 translateX(x) 仅水平方向移动（X轴移动）
-translateY(y) 仅垂直方向移动（Y轴移动">
-<meta property="og:image" content="http://yoursite.com/demo.jpg">
-<meta property="og:updated_time" content="2016-07-03T08:14:10.968Z">
+translateY(y) 仅垂直方向移动（Y轴移动）">
+<meta property="og:image" content="http://yoursite.com/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2.jpg">
+<meta property="og:image" content="http://yoursite.com/3.png">
+<meta property="og:updated_time" content="2016-07-03T09:35:12.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3动画">
 <meta name="twitter:description" content="与CSS动画相关的知识有transform，transition，以及animation
-transform
-translate() // 移动：将HTML元素在x-y轴平面上做位移，且不会影响到其他元素
+transformCSS3 2D Transformtranslate() // 移动
 translate(x,y) 水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）
 translateX(x) 仅水平方向移动（X轴移动）
-translateY(y) 仅垂直方向移动（Y轴移动">
-<meta name="twitter:image" content="http://yoursite.com/demo.jpg">
+translateY(y) 仅垂直方向移动（Y轴移动）">
+<meta name="twitter:image" content="http://yoursite.com/1.jpg">
 
 
 
@@ -330,49 +329,87 @@ translateY(y) 仅垂直方向移动（Y轴移动">
 
       
         <p>与CSS动画相关的知识有<code>transform</code>，<code>transition</code>，以及<code>animation</code></p>
-<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><ul>
-<li>translate() // 移动：将HTML元素在x-y轴平面上做位移，且不会影响到其他元素<ul>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><h4 id="CSS3-2D-Transform"><a href="#CSS3-2D-Transform" class="headerlink" title="CSS3 2D Transform"></a>CSS3 2D Transform</h4><h5 id="translate-移动"><a href="#translate-移动" class="headerlink" title="translate() // 移动"></a>translate() // 移动</h5><ul>
 <li><code>translate(x,y)</code> 水平方向和垂直方向同时移动（也就是X轴和Y轴同时移动）</li>
 <li><code>translateX(x)</code> 仅水平方向移动（X轴移动）</li>
 <li><code>translateY(y)</code> 仅垂直方向移动（Y轴移动）</li>
 </ul>
-</li>
-</ul>
 <a id="more"></a>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">-webkit-transform</span>: <span class="selector-tag">translate</span>(20<span class="selector-tag">px</span>,20<span class="selector-tag">px</span>); <span class="comment">/*Webkit内核浏览器：Safari and Chrome*/</span></div><div class="line"><span class="selector-tag">-moz-transform</span>: <span class="selector-tag">translate</span>(20<span class="selector-tag">px</span>,20<span class="selector-tag">px</span>);  <span class="comment">/*Mozilla内核浏览器*/</span></div><div class="line"><span class="selector-tag">-o-transform</span>: <span class="selector-tag">translate</span>(20<span class="selector-tag">px</span>,20<span class="selector-tag">px</span>);  <span class="comment">/*Opera*/</span></div><div class="line"><span class="selector-tag">-ms-transform</span><span class="selector-pseudo">:translate(20px</span>,20<span class="selector-tag">px</span>);  <span class="comment">/*IE9*/</span></div><div class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(20<span class="selector-tag">px</span>,20<span class="selector-tag">px</span>);  <span class="comment">/*W3C标准*/</span></div></pre></td></tr></table></figure>
-<ul>
-<li>rotate() // 旋转<ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="attribute">-webkit-transform</span>: <span class="built_in">translate</span>(20px,20px); <span class="comment">/*Webkit内核浏览器：Safari and Chrome*/</span></div><div class="line"><span class="attribute">-moz-transform</span>: <span class="built_in">translate</span>(20px,20px);  <span class="comment">/*Mozilla内核浏览器*/</span></div><div class="line"><span class="attribute">-o-transform</span>: <span class="built_in">translate</span>(20px,20px);  <span class="comment">/*Opera*/</span></div><div class="line"><span class="attribute">-ms-transform</span>:<span class="built_in">translate</span>(20px,20px);  <span class="comment">/*IE9*/</span></div><div class="line"><span class="attribute">transform</span>: <span class="built_in">translate</span>(20px,20px);  <span class="comment">/*W3C标准*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="rotate-旋转"><a href="#rotate-旋转" class="headerlink" title="rotate() // 旋转"></a>rotate() // 旋转</h5><ul>
 <li>需先有<code>transform-origin</code>属性的定义。<code>transform-origin</code>定义的是旋转的基点</li>
 <li>如果设置的值为正数表示顺时针旋转，如果设置的值为负数，则表示逆时针旋转；</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:rotate(30deg)</span>;</div></pre></td></tr></table></figure>
-<ul>
-<li>scale() // 缩放<ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attribute">transform</span>:<span class="built_in">rotate</span>(30deg);&#125;</div></pre></td></tr></table></figure>
+<h5 id="scale-缩放"><a href="#scale-缩放" class="headerlink" title="scale() // 缩放"></a>scale() // 缩放</h5><ul>
 <li><code>scale(x,y)</code> 使元素水平方向和垂直方向同时缩放（也就是X轴和Y轴同时缩放）</li>
 <li><code>scaleX(x)</code> 元素仅水平方向缩放（X轴缩放）</li>
 <li><code>scaleY(y)</code> 元素仅垂直方向缩放（Y轴缩放)</li>
 <li>它们具有相同的缩放中心点和基数，其中心点就是元素的中心位置</li>
 <li>缩放基数为1，如果其值大于1元素就放大，反之其值小于1，元素缩小</li>
 </ul>
-</li>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attribute">transform</span>:<span class="built_in">scale</span>(1.5,1.3)&#125;</div></pre></td></tr></table></figure>
+<h5 id="skew-扭曲，斜切变换"><a href="#skew-扭曲，斜切变换" class="headerlink" title="skew()  // 扭曲，斜切变换"></a>skew()  // 扭曲，斜切变换</h5><ul>
+<li><code>skew(x,y)</code> 使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）</li>
+<li><code>skewX(x)</code> 仅使元素在水平方向扭曲变形（X轴扭曲变形）</li>
+<li><code>skewY(y)</code> 仅使元素在垂直方向扭曲变形（Y轴扭曲变形）</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:scale(1.5</span>,1<span class="selector-class">.3</span>)</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attribute">transform</span>:<span class="built_in">skewX</span>(30deg)&#125;</div></pre></td></tr></table></figure>
+<p><img src="1.jpg" alt="30deg"><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attribute">transform</span>:<span class="built_in">skewY</span>(10deg)&#125;</div></pre></td></tr></table></figure></p>
+<p><img src="2.jpg" alt="30deg"></p>
+<h5 id="matrix-矩阵"><a href="#matrix-矩阵" class="headerlink" title="matrix() //矩阵"></a>matrix() //矩阵</h5><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;<span class="attribute">transform</span>: <span class="built_in">matrix</span>(a,b,c,d,tx,ty);&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>详细：<a href="http://www.zhangxinxu.com/wordpress/2012/06/css3-transform-matrix-%E7%9F%A9%E9%98%B5/" target="_blank" rel="external">理解CSS3 transform中的Matrix(矩阵)</a></p>
+</blockquote>
+<h5 id="transform-origin-改变元素基点"><a href="#transform-origin-改变元素基点" class="headerlink" title="transform-origin  // 改变元素基点"></a>transform-origin  // 改变元素基点</h5><ul>
+<li>transform-origin(X,Y):用来设置元素的运动的基点（参照点）。默认点是元素的中心点。其中X和Y的值可以是百分值,em,px</li>
+<li>其中X也可以是字符参数值left,center,right；Y和X一样除了百分值外还可以设置字符值top,center,bottom</li>
+</ul>
+<h5 id="支持transform的浏览器"><a href="#支持transform的浏览器" class="headerlink" title="支持transform的浏览器"></a>支持transform的浏览器</h5><p>IE9以下不支持<br><img src="3.png" alt=""></p>
+<h4 id="CSS3-3D-Transform"><a href="#CSS3-3D-Transform" class="headerlink" title="CSS3 3D Transform"></a>CSS3 3D Transform</h4><p>3D Transform，与2D Transform相比，它给HTML元素在x-y平面加上了z轴；<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">translate3d(tx,ty,tz); /*他定义了一个3D的位移方法，增加了z轴的偏移量*/</div><div class="line">translateZ(tz); /*这个方法只在Z轴偏移，与translateX()和translateY()相似*/</div><div class="line">scale3d(sx,sy,sz); /*在原有的scale方法上增加了z轴的参数*/</div><div class="line">scaleZ(sz); /*同理，只放大z轴，与scaleX()和scaleY()类似*/</div><div class="line">rotate3d(rx,ry,rz); /*将元素以给定参数的某一个轴方向旋转*/</div><div class="line">/*rotateX(angle)，rotateY(angle)和rotateZ(angle) 只按照某一个轴旋转，rotate3d(1,0,0,30deg)相当于rotateX(30deg)，其他类推。*/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>激活元素的3D空间，需要<code>perspective</code>属性，写法有两种：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="attribute">transform</span>: <span class="built_in">perspective</span>( 600px );</div><div class="line"><span class="attribute">perspective</span>: <span class="number">600px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>写法<code>transform:perspective(600px)</code>适用于单个元素，会对每一个元素做3D视图的变换<br>而<code>perspective:600px</code>的写法，需写在父元素上，然后以父元素的视角，对多个子元素进行3D变换，多个子元素共享同一个3D空间<br><code>perspective</code>的参数值，决定了3D效果的强烈程度，可以想象为距离多远去观察元素。值越大，观察距离就越远，同样的旋转值，看起来效果就弱一些；值越小，距离越近，3D效果就更强烈。</p>
+<h5 id="perspective-orgin"><a href="#perspective-orgin" class="headerlink" title="perspective-orgin"></a>perspective-orgin</h5><p>同样，对一个元素进行3D变换的时候，变换点都是元素的中心点，如果你想以其他的位置为变换点，那就可以用这个属性来做调整；</p>
+<h5 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h5><p>这个参数用来共享父元素的3D空间；<br><code>transform-style</code>有两个值，一个是默认的<code>flat</code>；一个是<code>preserve-3d</code></p>
+<h5 id="backface-visibility"><a href="#backface-visibility" class="headerlink" title="backface-visibility"></a>backface-visibility</h5><p>backface-visibility 属性可用于隐藏内容的背面。默认情况下，背面可见，这意味着即使在翻转后，变换的内容仍然可见。但当 <code>backface-visibility</code> 设置为 <code>hidden</code> 时，旋转后内容将隐藏，确保只有正面可见；</p>
+<blockquote>
+<p><a href="http://www.zhangxinxu.com/wordpress/2012/09/css3-3d-transform-perspective-animate-transition/" target="_blank" rel="external">CSS3 3D Transform 理解</a></p>
+</blockquote>
+<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><p>css属性值在一定时间内平滑地过渡；<br>transition主要包含四个属性值：</p>
+<h4 id="transition-property"><a href="#transition-property" class="headerlink" title="transition-property"></a>transition-property</h4><p>执行变换的属性；应用所有属性用all；</p>
+<h4 id="transition-duration"><a href="#transition-duration" class="headerlink" title="transition-duration"></a>transition-duration</h4><p>动画持续的时间；注意要加单位s或者ms</p>
+<h4 id="transition-timing-function"><a href="#transition-timing-function" class="headerlink" title="transition-timing-function"></a>transition-timing-function</h4><p>在延续时间段，变换的速率变化；包括：</p>
 <ul>
-<li>skew()  // 扭曲，斜切变换<ul>
-<li>skew(x,y)使元素在水平和垂直方向同时扭曲（X轴和Y轴同时按一定的角度值进行扭曲变形）</li>
-<li>skewX(x)仅使元素在水平方向扭曲变形（X轴扭曲变形）</li>
-<li>skewY(y)仅使元素在垂直方向扭曲变形（Y轴扭曲变形）</li>
+<li>ease：默认项，动画效果慢慢开始然后加速，到中点后再减速最后缓慢到达终点</li>
+<li>ease-in-out：与ease类似，加减速更柔和一些</li>
+<li>ease-in：开始比较慢，但是加速和停止曲线比较陡峭</li>
+<li>ease-out：开始较快，然后缓慢停止</li>
+<li>linear：线性平均速率，通常在color和opacity属性的变化上</li>
+<li>cubic-bezier函数：自定义速度模式;可以使用<a href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank" rel="external">工具</a></li>
 </ul>
-</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">transform</span><span class="selector-pseudo">:skewX(30deg)</span></div></pre></td></tr></table></figure>
-<p><img src="demo.jpg" alt="30deg"></p>
+<h4 id="transition-delay"><a href="#transition-delay" class="headerlink" title="transition-delay"></a>transition-delay</h4><p>变换延迟时间；delay的真正意义在于，它指定了动画发生的顺序，使得多个不同的transition可以连在一起，形成复杂效果。<br>注意:transition需要事件触发，所以没法在网页加载时自动发生。</p>
+<p>例子：<br>简写：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">transition</span>: <span class="number">1s</span> <span class="number">1s</span> height ease;</div><div class="line">    <span class="attribute">-webkit-transition</span>: <span class="number">1s</span> <span class="number">1s</span> height ease;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>分开写：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">img</span>&#123;</div><div class="line">    <span class="attribute">transition-property</span>: height;</div><div class="line">    <span class="attribute">transition-duration</span>: <span class="number">1s</span>;</div><div class="line">    <span class="attribute">transition-delay</span>: <span class="number">1s</span>;</div><div class="line">    <span class="attribute">transition-timing-function</span>: ease;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>transition的高级写法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-id">#animate</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">10em</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#F00</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">5px</span>;</div><div class="line">    <span class="attribute">transition-property</span>: width, border-radius, background-color;</div><div class="line">    <span class="attribute">transition-duration</span>: <span class="number">1s</span>, <span class="number">2s</span>;</div><div class="line">    <span class="attribute">transition-timing-function</span>:  ease, ease-out, linear;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="selector-tag">p</span><span class="selector-id">#animate</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">20em</span>;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#00F</span>;</div><div class="line">    <span class="attribute">border-radius</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>注意其中的transition-duration只写了两个，那么第三个transition-property属性background-color就用循环到第一个，也就是说他的transition-duration值是1s；</p>
+<h4 id="transition的兼容写法"><a href="#transition的兼容写法" class="headerlink" title="transition的兼容写法"></a>transition的兼容写法</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">-webkit-transition</span>: all .<span class="number">5s</span> ease-in-out <span class="number">1s</span>;</div><div class="line">  <span class="attribute">-o-transition</span>: all .<span class="number">5s</span> ease-in-out <span class="number">1s</span>;</div><div class="line">  <span class="attribute">-moz-transition</span>: all .<span class="number">5s</span> ease-in-out <span class="number">1s</span>;</div><div class="line">  <span class="attribute">transition</span>: all .<span class="number">5s</span> ease-in-out <span class="number">1s</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://leaverou.github.io/animatable/" target="_blank" rel="external">用CSS3 Transition制作的效果</a></p>
+</blockquote>
+<h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h3><h4 id="定义keyframes"><a href="#定义keyframes" class="headerlink" title="定义keyframes"></a>定义keyframes</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">keyframes</span> rainbow &#123;</div><div class="line">    0%   &#123; <span class="attribute">background-color</span>: <span class="number">#00F</span>; <span class="comment">/* from: blue */</span> &#125;</div><div class="line">    25%  &#123; <span class="attribute">background-color</span>: <span class="number">#F00</span>; <span class="comment">/* red        */</span> &#125;</div><div class="line">    50%  &#123; <span class="attribute">background-color</span>: <span class="number">#0F0</span>; <span class="comment">/* green      */</span> &#125;</div><div class="line">    75%  &#123; <span class="attribute">background-color</span>: <span class="number">#F0F</span>; <span class="comment">/* purple     */</span> &#125;</div><div class="line">    100% &#123; <span class="attribute">background-color</span>: <span class="number">#00F</span>; <span class="comment">/* to: blue   */</span> &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rainbow &#123;</div><div class="line">    0%   &#123; <span class="attribute">background-color</span>: <span class="number">#00F</span>; <span class="comment">/* from: blue */</span> &#125;</div><div class="line">    25%  &#123; <span class="attribute">background-color</span>: <span class="number">#F00</span>; <span class="comment">/* red        */</span> &#125;</div><div class="line">    50%  &#123; <span class="attribute">background-color</span>: <span class="number">#0F0</span>; <span class="comment">/* green      */</span> &#125;</div><div class="line">    75%  &#123; <span class="attribute">background-color</span>: <span class="number">#F0F</span>; <span class="comment">/* purple     */</span> &#125;</div><div class="line">    100% &#123; <span class="attribute">background-color</span>: <span class="number">#00F</span>; <span class="comment">/* to: blue   */</span> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>对于0%这个也可以用from关键字来替代，同样的可以用to来代替100%，过渡状态，你可以定义任何百分比；</p>
+<h4 id="animation应用"><a href="#animation应用" class="headerlink" title="animation应用"></a>animation应用</h4><p>将animation应用到元素的属性写法，和transition差不太多：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">animation-name</span>: rainbow;</div><div class="line">  <span class="attribute">animation-duration</span>: <span class="number">1s</span>;</div><div class="line">  <span class="attribute">animation-timing-function</span>: linear;</div><div class="line">  <span class="attribute">animation-delay</span>: <span class="number">1s</span>;</div><div class="line">  <span class="attribute">animation-fill-mode</span>:forwards;  <span class="comment">/*forwards表示让动画停留在结束状态*/</span></div><div class="line">  <span class="attribute">animation-direction</span>: normal;</div><div class="line">  <span class="attribute">animation-iteration-count</span>: <span class="number">3</span>;  <span class="comment">/*用来指定动画循环的次数，无限循环用infinite*/</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/*简写*/</span></div><div class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">animation</span>: <span class="number">1s</span> <span class="number">1s</span> rainbow linear <span class="number">3</span> forwards normal;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>animation-direction有四个值：</p>
 <ul>
-<li>matrix()  // 矩阵变形</li>
+<li>normal：默认，从0%执行到100%</li>
+<li>reverse：动画从100%执行到0%</li>
+<li>alternate：动画在0%到100%之间往复执行;</li>
+<li>alternate-reverse与alternate一致，不过是从100%开始;</li>
 </ul>
-<h3 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h3><h3 id="animation"><a href="#animation" class="headerlink" title="animation"></a>animation</h3><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3>
+<p>animation-play-state<br>有时，动画播放过程中，会突然停止。这时，默认行为是跳回到动画的开始状态;<br>如果想让动画保持突然终止时的状态可以使用animation-play-state: running;</p>
+<h4 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h4><p>IE 10和Firefox（&gt;= 16）支持没有前缀的animation，而chrome不支持，所以必须使用webkit前缀。实际运用中，代码必须考虑兼容写法：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">  <span class="attribute">-webkit-animation</span>: <span class="number">1s</span> rainbow;</div><div class="line">  <span class="attribute">animation</span>: <span class="number">1s</span> rainbow; </div><div class="line">&#125;</div><div class="line"> </div><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> rainbow &#123;</div><div class="line">  0% &#123; <span class="attribute">background</span>: <span class="number">#c00</span>; &#125;</div><div class="line">  50% &#123; <span class="attribute">background</span>: orange; &#125;</div><div class="line">  100% &#123; <span class="attribute">background</span>: yellowgreen; &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">@<span class="keyword">keyframes</span> rainbow &#123;</div><div class="line">  0% &#123; <span class="attribute">background</span>: <span class="number">#c00</span>; &#125;</div><div class="line">  50% &#123; <span class="attribute">background</span>: orange; &#125;</div><div class="line">  100% &#123; <span class="attribute">background</span>: yellowgreen; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="http://beiyuu.com/css3-animation" target="_blank" rel="external">CSS3动画详解</a><br><a href="http://www.w3cplus.com/content/css3-transform" target="_blank" rel="external">CSS3动画</a><br><a href="http://www.zhangxinxu.com/wordpress/2010/11/css3-transitions-transforms-animation-introduction/" target="_blank" rel="external">CSS3动画使用简介与应用展示</a><br><a href="http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html" target="_blank" rel="external">CSS动画简介-阮一峰</a></p>
+
       
     </div>
 
@@ -411,6 +448,10 @@ translateY(y) 仅垂直方向移动（Y轴移动">
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/01/获取页面高度和宽度/" rel="prev" title="获取页面高度和宽度">
+                获取页面高度和宽度 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -482,7 +523,7 @@ translateY(y) 仅垂直方向移动（Y轴移动">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -490,7 +531,7 @@ translateY(y) 仅垂直方向移动（Y轴移动">
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -499,7 +540,7 @@ translateY(y) 仅垂直方向移动（Y轴移动">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -528,7 +569,7 @@ translateY(y) 仅垂直方向移动（Y轴移动">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#transform"><span class="nav-number">1.</span> <span class="nav-text">transform</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transition"><span class="nav-number">2.</span> <span class="nav-text">transition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#animation"><span class="nav-number">3.</span> <span class="nav-text">animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#transform"><span class="nav-number">1.</span> <span class="nav-text">transform</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3-2D-Transform"><span class="nav-number">1.1.</span> <span class="nav-text">CSS3 2D Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#translate-移动"><span class="nav-number">1.1.1.</span> <span class="nav-text">translate() // 移动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#rotate-旋转"><span class="nav-number">1.1.2.</span> <span class="nav-text">rotate() // 旋转</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#scale-缩放"><span class="nav-number">1.1.3.</span> <span class="nav-text">scale() // 缩放</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#skew-扭曲，斜切变换"><span class="nav-number">1.1.4.</span> <span class="nav-text">skew()  // 扭曲，斜切变换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#matrix-矩阵"><span class="nav-number">1.1.5.</span> <span class="nav-text">matrix() //矩阵</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#transform-origin-改变元素基点"><span class="nav-number">1.1.6.</span> <span class="nav-text">transform-origin  // 改变元素基点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#支持transform的浏览器"><span class="nav-number">1.1.7.</span> <span class="nav-text">支持transform的浏览器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS3-3D-Transform"><span class="nav-number">1.2.</span> <span class="nav-text">CSS3 3D Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#perspective-orgin"><span class="nav-number">1.2.1.</span> <span class="nav-text">perspective-orgin</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#transform-style"><span class="nav-number">1.2.2.</span> <span class="nav-text">transform-style</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#backface-visibility"><span class="nav-number">1.2.3.</span> <span class="nav-text">backface-visibility</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transition"><span class="nav-number">2.</span> <span class="nav-text">transition</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-property"><span class="nav-number">2.1.</span> <span class="nav-text">transition-property</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-duration"><span class="nav-number">2.2.</span> <span class="nav-text">transition-duration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-timing-function"><span class="nav-number">2.3.</span> <span class="nav-text">transition-timing-function</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition-delay"><span class="nav-number">2.4.</span> <span class="nav-text">transition-delay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transition的兼容写法"><span class="nav-number">2.5.</span> <span class="nav-text">transition的兼容写法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#animation"><span class="nav-number">3.</span> <span class="nav-text">animation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义keyframes"><span class="nav-number">3.1.</span> <span class="nav-text">定义keyframes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#animation应用"><span class="nav-number">3.2.</span> <span class="nav-text">animation应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器支持"><span class="nav-number">3.3.</span> <span class="nav-text">浏览器支持</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-number">4.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
             
           </div>
         </section>
