@@ -1,0 +1,635 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.useso.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="jquery,模块化," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="普通代码实现功能最开始的时候，是这样写一个轮播的：
+12345678910111213&amp;lt;!-- html --&amp;gt;&amp;lt;div class=&quot;carousel&quot;&amp;gt;  &amp;lt;ul class=&quot;img-ct&quot;&amp;gt;    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;img src=&quot;imgs/1.jpg&quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模块化轮播">
+<meta property="og:url" content="http://yoursite.com/2016/06/30/模块化轮播/index.html">
+<meta property="og:site_name" content="前端记忆">
+<meta property="og:description" content="普通代码实现功能最开始的时候，是这样写一个轮播的：
+12345678910111213&amp;lt;!-- html --&amp;gt;&amp;lt;div class=&quot;carousel&quot;&amp;gt;  &amp;lt;ul class=&quot;img-ct&quot;&amp;gt;    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;img src=&quot;imgs/1.jpg&quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;">
+<meta property="og:updated_time" content="2016-07-03T03:53:55.788Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="模块化轮播">
+<meta name="twitter:description" content="普通代码实现功能最开始的时候，是这样写一个轮播的：
+12345678910111213&amp;lt;!-- html --&amp;gt;&amp;lt;div class=&quot;carousel&quot;&amp;gt;  &amp;lt;ul class=&quot;img-ct&quot;&amp;gt;    &amp;lt;li&amp;gt;&amp;lt;a href=&quot;#&quot;&amp;gt;&amp;lt;img src=&quot;imgs/1.jpg&quot;&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/30/模块化轮播/"/>
+
+  <title> 模块化轮播 | 前端记忆 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">前端记忆</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">前端</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                模块化轮播
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-30T23:12:27+08:00" content="2016-06-30">
+              2016-06-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/30/模块化轮播/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/30/模块化轮播/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="普通代码实现功能"><a href="#普通代码实现功能" class="headerlink" title="普通代码实现功能"></a>普通代码实现功能</h4><p>最开始的时候，是这样写一个轮播的：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- html --&gt;</div><div class="line">&lt;div class="carousel"&gt;</div><div class="line">  &lt;ul class="img-ct"&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/1.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/2.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/3.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/4.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/3.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/4.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">  &lt;a class="pre arrow" href="#"&gt;&lt;&lt;/a&gt;</div><div class="line">  &lt;a class="next arrow" href="#"&gt;&gt;&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// javascript</span></div><div class="line"><span class="keyword">var</span> $ct = $(<span class="string">'.img-ct'</span>),</div><div class="line">$liArr = $(<span class="string">'.img-ct li'</span>),</div><div class="line">$pre = $(<span class="string">'.pre'</span>),</div><div class="line">$next = $(<span class="string">'.next'</span>),</div><div class="line">imgWidth = $liArr.width(),</div><div class="line">imgSize = $liArr.size();</div><div class="line"></div><div class="line">$ct.css(<span class="string">'width'</span>, imgWidth*imgSize);</div><div class="line"></div><div class="line">$next.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  $ct.animate(&#123;<span class="string">'left'</span>: <span class="number">0</span>-imgWidth&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $ct.append($ct.children(<span class="string">'li'</span>).first());  <span class="comment">//将第一个放到最末去</span></div><div class="line">    $ct.css(<span class="string">'left'</span>, <span class="string">'0'</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">$pre.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  $ct.prepend($ct.children(<span class="string">'li'</span>).last());</div><div class="line">  $ct.css(<span class="string">'left'</span>, <span class="number">0</span>-imgWidth);</div><div class="line">  $ct.animate(&#123;<span class="string">'left'</span>: <span class="number">0</span>&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="模块化实现功能"><a href="#模块化实现功能" class="headerlink" title="模块化实现功能"></a>模块化实现功能</h4><p>为了可以复用，组件化地开发；当页面出现多个轮播，能简单的复用而互不影响；考虑将js写成这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Carousel_bo = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params">carousel</span>)</span>&#123;&#125;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">Carousel</span>(<span class="params">carousel</span>)</span>&#123;&#125;   <span class="comment">//构造函数</span></div><div class="line">    Carousel.prototype = &#123;&#125;</div><div class="line">    </div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">      init: init</div><div class="line">    &#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">Carousel_bo.init($(<span class="string">'.carousel'</span>));</div></pre></td></tr></table></figure>
+<p>这里改写轮播代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Carousel_bo = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"> carousel </span>) </span>&#123;</div><div class="line"></div><div class="line">    carousel.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  <span class="comment">//遍历每个轮播</span></div><div class="line">      <span class="keyword">var</span> car = $(<span class="keyword">this</span>);</div><div class="line">      <span class="keyword">if</span> (car.hasClass(<span class="string">'Loaded'</span>)) &#123;  <span class="comment">//如果有“标识”</span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="keyword">new</span> Carousel(car);  <span class="comment">//创建实例</span></div><div class="line">      car.addClass(<span class="string">'Loaded'</span>)  <span class="comment">//对已经new过的轮播添加“标识”</span></div><div class="line">    &#125;);</div><div class="line"></div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">Carousel</span>(<span class="params">carousel</span>) </span>&#123;  <span class="comment">//构造函数</span></div><div class="line">    <span class="keyword">this</span>.carousel=carousel;</div><div class="line">    <span class="keyword">this</span>.ct = carousel.find(<span class="string">'.img-ct'</span>);</div><div class="line">    <span class="keyword">this</span>.liArr = <span class="keyword">this</span>.ct.find(<span class="string">'li'</span>);</div><div class="line">    <span class="keyword">this</span>.pre = carousel.find(<span class="string">'.pre'</span>);</div><div class="line">    <span class="keyword">this</span>.next = carousel.find(<span class="string">'.next'</span>);</div><div class="line">    <span class="keyword">this</span>.imgWidth = <span class="keyword">this</span>.liArr.width();</div><div class="line">    <span class="keyword">this</span>.imgSize = <span class="keyword">this</span>.liArr.size();</div><div class="line">    <span class="keyword">this</span>.clock=<span class="literal">null</span>;  <span class="comment">//定时器</span></div><div class="line"></div><div class="line">    <span class="keyword">this</span>.ct.css(<span class="string">'width'</span>, <span class="keyword">this</span>.imgWidth * <span class="keyword">this</span>.imgSize);</div><div class="line">    <span class="keyword">this</span>.bind();</div><div class="line">    <span class="keyword">this</span>.autoPlay();</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  Carousel.prototype = &#123;   <span class="comment">// 共享的东西写在原型对象上</span></div><div class="line"></div><div class="line">    bind: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      </div><div class="line">      <span class="keyword">var</span> _this = <span class="keyword">this</span>;  <span class="comment">//记录this</span></div><div class="line">      <span class="keyword">this</span>.next.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        _this.shownext();</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.pre.on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        _this.showpre();</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">      <span class="keyword">this</span>.carousel.hover(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  <span class="comment">//移入移出自动轮播</span></div><div class="line">        clearInterval(_this.clock);</div><div class="line">      &#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        _this.autoPlay();</div><div class="line">      &#125;);</div><div class="line"></div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    showpre: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//上一个</span></div><div class="line">      <span class="keyword">this</span>.ct.prepend(<span class="keyword">this</span>.ct.children().last());</div><div class="line">      <span class="keyword">this</span>.ct.css(<span class="string">'left'</span>, <span class="number">0</span>-<span class="keyword">this</span>.imgWidth);</div><div class="line">      <span class="keyword">this</span>.ct.stop().animate(&#123;<span class="string">'left'</span>: <span class="number">0</span>&#125;);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    shownext:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//下一个</span></div><div class="line">      <span class="keyword">var</span> _this = <span class="keyword">this</span>;</div><div class="line">      <span class="keyword">this</span>.ct.stop().animate(&#123;<span class="string">'left'</span>: <span class="number">0</span>-<span class="keyword">this</span>.imgWidth&#125;,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        _this.ct.append(_this.ct.children(<span class="string">'li'</span>).first());</div><div class="line">        _this.ct.css(<span class="string">'left'</span>, <span class="number">0</span>);</div><div class="line">      &#125;);</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    autoPlay: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;   <span class="comment">//自动轮播</span></div><div class="line">      <span class="keyword">var</span> _this = <span class="keyword">this</span>;</div><div class="line">      <span class="keyword">this</span>.clock = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        _this.shownext();</div><div class="line">      &#125;, <span class="number">2000</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> &#123;  <span class="comment">//return出一个对象以便调用</span></div><div class="line">    init: init</div><div class="line">  &#125;</div><div class="line">&#125;)();</div><div class="line"></div><div class="line">Carousel_bo.init($(<span class="string">'.carousel'</span>));</div></pre></td></tr></table></figure></p>
+<p>这样不管一个页面上有多少个轮播，只要按照之前的html结构书写，使用：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Carousel_bo.init($(<span class="string">'.carousel'</span>));</div></pre></td></tr></table></figure></p>
+<p>就能得到想要的结果，而且能够复用。</p>
+<h4 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h4><blockquote>
+<p><a href="https://htmlpreview.github.io/?https://github.com/xuanweb/demo/blob/master/%E8%BD%AE%E6%92%AD%E7%BB%84%E4%BB%B6%E5%8C%96/index.html" target="_blank" rel="external">demo</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jquery/" rel="tag">#jquery</a>
+          
+            <a href="/tags/模块化/" rel="tag">#模块化</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/29/接触js中的面向对象/" rel="next" title="接触js中的面向对象">
+                <i class="fa fa-chevron-left"></i> 接触js中的面向对象
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/01/CSS3动画/" rel="prev" title="CSS动画">
+                CSS动画 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/30/模块化轮播/"
+           data-title="模块化轮播" data-url="http://yoursite.com/2016/06/30/模块化轮播/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="小轩" />
+          <p class="site-author-name" itemprop="name">小轩</p>
+          <p class="site-description motion-element" itemprop="description">“生”只有一次</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#普通代码实现功能"><span class="nav-number">1.</span> <span class="nav-text">普通代码实现功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模块化实现功能"><span class="nav-number">2.</span> <span class="nav-text">模块化实现功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DEMO"><span class="nav-number">3.</span> <span class="nav-text">DEMO</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">小轩</span>
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NEXT
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="//apps.bdimg.com/libs/jquery/2.1.3/jquery.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"xuaninweb"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
