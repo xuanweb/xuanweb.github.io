@@ -101,7 +101,7 @@ translateY(y) 仅垂直方向移动（Y轴移动）">
 <meta property="og:image" content="http://yoursite.com/1.jpg">
 <meta property="og:image" content="http://yoursite.com/2.jpg">
 <meta property="og:image" content="http://yoursite.com/3.png">
-<meta property="og:updated_time" content="2016-07-03T09:35:12.008Z">
+<meta property="og:updated_time" content="2016-07-05T00:34:53.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS3动画">
 <meta name="twitter:description" content="与CSS动画相关的知识有transform，transition，以及animation
@@ -366,10 +366,11 @@ translateY(y) 仅垂直方向移动（Y轴移动）">
 <li>其中X也可以是字符参数值left,center,right；Y和X一样除了百分值外还可以设置字符值top,center,bottom</li>
 </ul>
 <h5 id="支持transform的浏览器"><a href="#支持transform的浏览器" class="headerlink" title="支持transform的浏览器"></a>支持transform的浏览器</h5><p>IE9以下不支持<br><img src="3.png" alt=""></p>
-<h4 id="CSS3-3D-Transform"><a href="#CSS3-3D-Transform" class="headerlink" title="CSS3 3D Transform"></a>CSS3 3D Transform</h4><p>3D Transform，与2D Transform相比，它给HTML元素在x-y平面加上了z轴；<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">translate3d(tx,ty,tz); /*他定义了一个3D的位移方法，增加了z轴的偏移量*/</div><div class="line">translateZ(tz); /*这个方法只在Z轴偏移，与translateX()和translateY()相似*/</div><div class="line">scale3d(sx,sy,sz); /*在原有的scale方法上增加了z轴的参数*/</div><div class="line">scaleZ(sz); /*同理，只放大z轴，与scaleX()和scaleY()类似*/</div><div class="line">rotate3d(rx,ry,rz); /*将元素以给定参数的某一个轴方向旋转*/</div><div class="line">/*rotateX(angle)，rotateY(angle)和rotateZ(angle) 只按照某一个轴旋转，rotate3d(1,0,0,30deg)相当于rotateX(30deg)，其他类推。*/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="CSS3-3D-Transform"><a href="#CSS3-3D-Transform" class="headerlink" title="CSS3 3D Transform"></a>CSS3 3D Transform</h4><p>3D Transform，与2D Transform相比，它给HTML元素在x-y平面加上了z轴；CSS3 3D转换：使元素改变位置、旋转、视角<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">translate3d(tx,ty,tz); /*他定义了一个3D的位移方法，增加了z轴的偏移量*/</div><div class="line">translateZ(tz); /*这个方法只在Z轴偏移，与translateX()和translateY()相似*/</div><div class="line">scale3d(sx,sy,sz); /*在原有的scale方法上增加了z轴的参数*/</div><div class="line">scaleZ(sz); /*同理，只放大z轴，与scaleX()和scaleY()类似*/</div><div class="line">rotate3d(rx,ry,rz); /*将元素以给定参数的某一个轴方向旋转*/</div><div class="line">/*rotateX(angle)，rotateY(angle)和rotateZ(angle) 只按照某一个轴旋转，rotate3d(1,0,0,30deg)相当于rotateX(30deg)，其他类推。*/</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>激活元素的3D空间，需要<code>perspective</code>属性，写法有两种：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"><span class="attribute">transform</span>: <span class="built_in">perspective</span>( 600px );</div><div class="line"><span class="attribute">perspective</span>: <span class="number">600px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>写法<code>transform:perspective(600px)</code>适用于单个元素，会对每一个元素做3D视图的变换<br>而<code>perspective:600px</code>的写法，需写在父元素上，然后以父元素的视角，对多个子元素进行3D变换，多个子元素共享同一个3D空间<br><code>perspective</code>的参数值，决定了3D效果的强烈程度，可以想象为距离多远去观察元素。值越大，观察距离就越远，同样的旋转值，看起来效果就弱一些；值越小，距离越近，3D效果就更强烈。</p>
-<h5 id="perspective-orgin"><a href="#perspective-orgin" class="headerlink" title="perspective-orgin"></a>perspective-orgin</h5><p>同样，对一个元素进行3D变换的时候，变换点都是元素的中心点，如果你想以其他的位置为变换点，那就可以用这个属性来做调整；</p>
+<p>写法<code>transform:perspective(600px)</code>适用于单个元素，会对每一个元素做3D视图的变换<br>而<code>perspective:600px</code>的写法，需写在父元素上，然后以父元素的视角，对多个子元素进行3D变换，多个子元素共享同一个3D空间<br><code>perspective</code>的参数值，决定了3D效果的强烈程度，可以想象为距离多远去观察元素。值越大，观察距离就越远，同样的旋转值，看起来效果就弱一些；值越小，距离越近，3D效果就更强烈。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.div</span><span class="selector-pseudo">:hover</span>&#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">perspective</span>(600px) <span class="built_in">translateZ</span>(100px);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><a href="http://jsbin.com/roviparuce/edit?html,output" target="_blank" rel="external">效果演示</a></p>
+<h5 id="perspective-orgin"><a href="#perspective-orgin" class="headerlink" title="perspective-orgin"></a>perspective-orgin</h5><p>同样，对一个元素进行3D变换的时候，变换点都是元素的中心点，如果你想以其他的位置为变换点，那就可以用这个属性来做调整；当为元素定义<code>perspective-origin</code>属性时，其子元素会获得透视效果，而不是元素本身。该属性必须与<code>perspective</code>属性一同使用，而且只影响 3D 转换元素，如<code>perspective-origin: 10% 10%;</code></p>
 <h5 id="transform-style"><a href="#transform-style" class="headerlink" title="transform-style"></a>transform-style</h5><p>这个参数用来共享父元素的3D空间；<br><code>transform-style</code>有两个值，一个是默认的<code>flat</code>；一个是<code>preserve-3d</code></p>
 <h5 id="backface-visibility"><a href="#backface-visibility" class="headerlink" title="backface-visibility"></a>backface-visibility</h5><p>backface-visibility 属性可用于隐藏内容的背面。默认情况下，背面可见，这意味着即使在翻转后，变换的内容仍然可见。但当 <code>backface-visibility</code> 设置为 <code>hidden</code> 时，旋转后内容将隐藏，确保只有正面可见；</p>
 <blockquote>
@@ -449,8 +450,8 @@ translateY(y) 仅垂直方向移动（Y轴移动）">
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/07/01/获取页面高度和宽度/" rel="prev" title="获取页面高度和宽度">
-                获取页面高度和宽度 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/07/01/CSS3动画实现3D轮播/" rel="prev" title="CSS3动画实现3D立方体和3D轮播">
+                CSS3动画实现3D立方体和3D轮播 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -523,7 +524,7 @@ translateY(y) 仅垂直方向移动（Y轴移动）">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -540,7 +541,7 @@ translateY(y) 仅垂直方向移动（Y轴移动）">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
