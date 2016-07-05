@@ -248,6 +248,151 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/03/JSON与JSONP/" itemprop="url">
+                  JSON与JSONP
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-03T09:42:19+08:00" content="2016-07-03">
+              2016-07-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/03/JSON与JSONP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/03/JSON与JSONP/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>目的：用JSON来传数据，用JSONP来跨域；</p>
+</blockquote>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>JSON是一种数据交换格式；JSONP是一种非官方的跨域数据交互协议；</p>
+<h3 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h3><p>在JSON中，有两种结构：对象和数组；分别用大括号{}和方括号[]表示；</p>
+<h4 id="对象："><a href="#对象：" class="headerlink" title="对象："></a>对象：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123; <span class="string">"firstName"</span>:<span class="string">"John"</span> , <span class="string">"lastName"</span>:<span class="string">"Doe"</span> &#125;</div><div class="line"></div><div class="line"><span class="comment">// 读取</span></div><div class="line">person.firstName;</div></pre></td></tr></table></figure>
+<h4 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//直接使用</span></div><div class="line"><span class="keyword">var</span> members = [</div><div class="line">    &#123;</div><div class="line">        <span class="string">"Name"</span>: <span class="string">"Bob"</span>,</div><div class="line">        <span class="string">"Age"</span>: <span class="number">32</span>,</div><div class="line">        <span class="string">"Company"</span>: <span class="string">"IBM"</span>,</div><div class="line">        <span class="string">"Engineer"</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="string">"Name"</span>: <span class="string">"John"</span>,</div><div class="line">        <span class="string">"Age"</span>: <span class="number">20</span>,</div><div class="line">        <span class="string">"Company"</span>: <span class="string">"Oracle"</span>,</div><div class="line">        <span class="string">"Engineer"</span>: <span class="literal">false</span></div><div class="line">    &#125;,</div><div class="line">    &#123;</div><div class="line">        <span class="string">"Name"</span>: <span class="string">"Henry"</span>,</div><div class="line">        <span class="string">"Age"</span>: <span class="number">45</span>,</div><div class="line">        <span class="string">"Company"</span>: <span class="string">"Microsoft"</span>,</div><div class="line">        <span class="string">"Engineer"</span>: <span class="literal">false</span></div><div class="line">    &#125;</div><div class="line">]</div><div class="line"></div><div class="line"><span class="comment">// 读取John的公司名称</span></div><div class="line"><span class="keyword">var</span> johnsCompany = members[<span class="number">1</span>].Company;</div><div class="line"></div><div class="line"><span class="comment">//也可以这样用：</span></div><div class="line"><span class="keyword">var</span> conference = &#123;</div><div class="line">    <span class="string">"Address"</span>: <span class="string">"Beijing"</span>,</div><div class="line">    <span class="string">"Members"</span>: </div><div class="line">    [</div><div class="line">        &#123;</div><div class="line">            <span class="string">"Name"</span>: <span class="string">"Bob"</span>,</div><div class="line">            <span class="string">"Age"</span>: <span class="number">32</span>,</div><div class="line">            <span class="string">"Company"</span>: <span class="string">"IBM"</span>,</div><div class="line">            <span class="string">"Engineer"</span>: <span class="literal">true</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="string">"Name"</span>: <span class="string">"John"</span>,</div><div class="line">            <span class="string">"Age"</span>: <span class="number">20</span>,</div><div class="line">            <span class="string">"Company"</span>: <span class="string">"Oracle"</span>,</div><div class="line">            <span class="string">"Engineer"</span>: <span class="literal">false</span></div><div class="line">        &#125;,</div><div class="line">        &#123;</div><div class="line">            <span class="string">"Name"</span>: <span class="string">"Henry"</span>,</div><div class="line">            <span class="string">"Age"</span>: <span class="number">45</span>,</div><div class="line">            <span class="string">"Company"</span>: <span class="string">"Microsoft"</span>,</div><div class="line">            <span class="string">"Engineer"</span>: <span class="literal">false</span></div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 读取</span></div><div class="line"><span class="keyword">var</span> henryIsAnEngineer = conference.Members[<span class="number">2</span>].Engineer;</div></pre></td></tr></table></figure>
+<h4 id="访问和修改"><a href="#访问和修改" class="headerlink" title="访问和修改"></a>访问和修改</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"employees"</span>: [</div><div class="line">    &#123; <span class="string">"firstName"</span>:<span class="string">"John"</span> , <span class="string">"lastName"</span>:<span class="string">"Doe"</span> &#125;,</div><div class="line">    &#123; <span class="string">"firstName"</span>:<span class="string">"Anna"</span> , <span class="string">"lastName"</span>:<span class="string">"Smith"</span> &#125;,</div><div class="line">    &#123; <span class="string">"firstName"</span>:<span class="string">"Peter"</span> , <span class="string">"lastName"</span>:<span class="string">"Jones"</span> &#125;</div><div class="line">  ]</div><div class="line">&#125;</div><div class="line"></div><div class="line">employees[<span class="number">0</span>].lastName;  <span class="comment">//访问</span></div><div class="line">employees[<span class="number">0</span>].lastName = <span class="string">"Jobs"</span>;  <span class="comment">//修改</span></div><div class="line">employees[<span class="number">0</span>].address = <span class="string">"xxx"</span>;  <span class="comment">// 增加;  或者employees["address"]="xxx"</span></div><div class="line"><span class="keyword">delete</span> employees[<span class="number">0</span>].lastName; <span class="comment">//删除JSON中的数据</span></div></pre></td></tr></table></figure>
+<h4 id="遍历JSON"><a href="#遍历JSON" class="headerlink" title="遍历JSON"></a>遍历JSON</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;json.length;i++)&#123;</div><div class="line">      <span class="keyword">for</span>(<span class="keyword">var</span> key <span class="keyword">in</span> json[i])&#123;</div><div class="line">      <span class="built_in">console</span>.log(key+<span class="string">':'</span>+json[i][key]);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在数据传输过程中，JSON是以文本，即字符串的形式传递的，而JS操作的是JSON对象，所以，JSON对象和JSON字符串之间的相互转换是关键。</p>
+<h4 id="JSON字符串转为JSON对象"><a href="#JSON字符串转为JSON对象" class="headerlink" title="JSON字符串转为JSON对象"></a>JSON字符串转为JSON对象</h4><p><code>JSON.parse()</code>只能识别 JSON 文本，而不会编译脚本。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">obj = <span class="built_in">JSON</span>.parse(txt);</div></pre></td></tr></table></figure></p>
+<h4 id="JSON对象转为JSON字符串"><a href="#JSON对象转为JSON字符串" class="headerlink" title="JSON对象转为JSON字符串"></a>JSON对象转为JSON字符串</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> last=<span class="built_in">JSON</span>.stringify(obj);</div></pre></td></tr></table></figure>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><h4 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h4><blockquote>
+<p>同源策略，它是由<code>Netscape</code>提出的一个著名的安全策略。现在所有支持JavaScript 的浏览器都会使用这个策略。所谓同源是指，<code>域名，协议，端口</code>相同。当一个浏览器的两个tab页中分别打开来 百度和谷歌的页面当一个百度浏览器执行一个脚本的时候会检查这个脚本是属于哪个页面的，即检查是否同源，只有和百度同源的脚本才会被执行。</p>
+</blockquote>
+<p><code>&lt;script&gt;</code>标签的<code>src</code>属性并不被同源策略所约束，所以可以获取任何服务器上脚本并执行。即拥有”src”这个属性的标签都拥有跨域的能力，比如<code>&lt;script&gt;、&lt;img&gt;、&lt;iframe&gt;</code>；</p>
+<h4 id="JSONP原理与使用"><a href="#JSONP原理与使用" class="headerlink" title="JSONP原理与使用"></a>JSONP原理与使用</h4><p>A页面<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">function callback(data) &#123;  //创建回调函数</div><div class="line">    alert(data.message);</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script src="http://localhost:20002/test.js"&gt;&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>test.js页面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//调用callback函数，并以json数据形式作为参数传递，完成回调</span></div><div class="line">callback(&#123;message:<span class="string">"success"</span>&#125;);</div></pre></td></tr></table></figure></p>
+<p><font style="font-weight: bold;">原理：A页面创建一个回调函数，然后在远程服务上调用这个函数并且将JSON 数据形式作为参数传递，完成回调。</font><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    <span class="comment">//添加&lt;script&gt;标签的方法</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">addScriptTag</span>(<span class="params">src</span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</div><div class="line">        script.setAttribute(<span class="string">"type"</span>,<span class="string">"text/javascript"</span>);</div><div class="line">        script.src = src;</div><div class="line">        <span class="built_in">document</span>.body.appendChild(script);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">//自定义的回调函数result</span></div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">result</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">        <span class="comment">//处理数据</span></div><div class="line">        <span class="built_in">console</span>.log(data.xxx);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="comment">//将自定义的回调函数名result传入callback参数中</span></div><div class="line">        addScriptTag(<span class="string">"http://xxxxxxx.com&amp;callback=result"</span>);   <span class="comment">//callback=result告诉服务器创建的回调函数的名称时result</span></div><div class="line">    &#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure></p>
+<p>调用的url中传递了一个&amp;callback=result这个是正如其名表示回调函数的名称，也就是将你自己在客户端定义的回调函数的函数名传送给服务端，服务端则会返回以你定义的回调函数名的方法，将获取的json数据传入这个方法完成回调。<br>服务器生成这样的JSON格式数据：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">result(&#123;</div><div class="line">    <span class="string">"code"</span>: <span class="string">"CA1998"</span>,</div><div class="line">    <span class="string">"price"</span>: <span class="number">1780</span>,</div><div class="line">    <span class="string">"tickets"</span>: <span class="number">5</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>这样就实现了最基本的JSONP服务调用;</p>
+<blockquote>
+<p><a href="http://htmlpreview.github.io/?https://github.com/xuanweb/demo/blob/master/%E7%99%BE%E5%BA%A6%E4%B8%8B%E6%8B%89%E6%A1%86/index.html" target="_blank" rel="external">DEMO-百度下拉框提示</a></p>
+</blockquote>
+<h3 id="jQuery中JSONP的实现"><a href="#jQuery中JSONP的实现" class="headerlink" title="jQuery中JSONP的实现"></a>jQuery中JSONP的实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    $.ajax(&#123;</div><div class="line">         type: <span class="string">"get"</span>,</div><div class="line">         <span class="keyword">async</span>: <span class="literal">false</span>,</div><div class="line">         url: <span class="string">"http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998"</span>,</div><div class="line">         dataType: <span class="string">"jsonp"</span>, <span class="comment">//按照JSOPN方式访问远程服务</span></div><div class="line">         jsonpCallback:<span class="string">"flightHandler"</span>,<span class="comment">//指定回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据</span></div><div class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">             alert(<span class="string">'您查询到航班信息：票价： '</span> + data.price + <span class="string">' 元，余票： '</span> + data.tickets + <span class="string">' 张。'</span>);</div><div class="line">         &#125;,</div><div class="line">         error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">             alert(<span class="string">'fail'</span>);</div><div class="line">         &#125;</div><div class="line">     &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="工具与参考资料"><a href="#工具与参考资料" class="headerlink" title="工具与参考资料"></a>工具与参考资料</h3><p><a href="http://json.cn/" target="_blank" rel="external">在线解析和格式验证</a><br><a href="http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html" target="_blank" rel="external">说说JSON和JSONP</a><br><a href="http://www.cnblogs.com/chopper/archive/2012/03/24/2403945.html" target="_blank" rel="external">深入浅出JSONP</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/02/正则表达式/" itemprop="url">
                   正则表达式
                 </a>
@@ -1289,7 +1434,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1306,7 +1451,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
