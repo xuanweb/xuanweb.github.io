@@ -87,10 +87,7 @@
 <meta name="description" content="CSS hack
 针对不同的浏览器/不同版本写出相应的CSS代码，叫做CSS hack原因：不同厂商的流览器或某浏览器的不同版本，对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果
 
-CSS Hack的3种表现形式
-
-IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官方推荐）
-1234567891011121314151617181">
+CSS Hack的3种表现形式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器兼容性处理">
 <meta property="og:url" content="http://yoursite.com/2016/07/04/浏览器兼容性处理/index.html">
@@ -98,20 +95,14 @@ IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官
 <meta property="og:description" content="CSS hack
 针对不同的浏览器/不同版本写出相应的CSS代码，叫做CSS hack原因：不同厂商的流览器或某浏览器的不同版本，对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果
 
-CSS Hack的3种表现形式
-
-IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官方推荐）
-1234567891011121314151617181">
-<meta property="og:updated_time" content="2016-07-06T03:54:52.745Z">
+CSS Hack的3种表现形式">
+<meta property="og:updated_time" content="2016-07-06T10:39:53.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器兼容性处理">
 <meta name="twitter:description" content="CSS hack
 针对不同的浏览器/不同版本写出相应的CSS代码，叫做CSS hack原因：不同厂商的流览器或某浏览器的不同版本，对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果
 
-CSS Hack的3种表现形式
-
-IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官方推荐）
-1234567891011121314151617181">
+CSS Hack的3种表现形式">
 
 
 
@@ -333,7 +324,7 @@ IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官
         <h3 id="CSS-hack"><a href="#CSS-hack" class="headerlink" title="CSS hack"></a>CSS hack</h3><blockquote>
 <p>针对不同的浏览器/不同版本写出相应的CSS代码，叫做CSS hack<br>原因：不同厂商的流览器或某浏览器的不同版本，对CSS的支持、解析不一样，导致在不同浏览器的环境中呈现出不一致的页面展现效果</p>
 </blockquote>
-<p>CSS Hack的3种表现形式</p>
+<p>CSS Hack的3种表现形式<br><a id="more"></a></p>
 <ul>
 <li><p>IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官方推荐）</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">只在IE下生效</div><div class="line"><span class="comment">&lt;!--[if IE]&gt;</span></div><div class="line">  &lt;link rel="stylesheet" type="text/css" href="ie.css"&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">只在IE6下生效</div><div class="line"><span class="comment">&lt;!--[if IE6]&gt;</span></div><div class="line">  &lt;link rel="stylesheet" type="text/css" href="ie6.css"&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">只在IE6以上版本生效</div><div class="line"><span class="comment">&lt;!--[if gte IE6]&gt;</span></div><div class="line">  &lt;link rel="stylesheet" type="text/css" href="ie.css"&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">非IE浏览器生效</div><div class="line"><span class="comment">&lt;!--[if !IE]&gt;</span></div><div class="line">  &lt;link rel="stylesheet" type="text/css" href="ie.css"&gt;</div><div class="line">&lt;![endif]--&gt;</div><div class="line"></div><div class="line">对IE9及以下的版本生效</div><div class="line"><span class="comment">&lt;!--[if lte IE 9]&gt;&lt;script&gt;window.location.href='update.html';&lt;/script&gt;&lt;![endif]--&gt;</span></div></pre></td></tr></table></figure>
@@ -344,12 +335,21 @@ IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">div&#123;height：300px;-height:400px；*+height:450px;&#125; /*普通高度是300像素，IE6是400像素，IE7是450像素*/</div></pre></td></tr></table></figure>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">background-color</span><span class="selector-pseudo">:red</span>; <span class="comment">/* All browsers */</span>  </div><div class="line"><span class="selector-tag">background-color</span><span class="selector-pseudo">:blue</span> !<span class="selector-tag">important</span>;<span class="comment">/* All browsers but IE6 */</span>  </div><div class="line">*<span class="selector-tag">background-color</span><span class="selector-pseudo">:black</span>; <span class="comment">/* IE6, IE7 */</span>  </div><div class="line">+<span class="selector-tag">background-color</span><span class="selector-pseudo">:yellow</span>;<span class="comment">/* IE6, IE7*/</span>  </div><div class="line"><span class="selector-tag">background-color</span><span class="selector-pseudo">:gray</span>\9; <span class="comment">/* IE6, IE7, IE8, IE9, IE10 */</span>  </div><div class="line"><span class="selector-tag">background-color</span><span class="selector-pseudo">:purple</span>\0; <span class="comment">/* IE8, IE9, IE10 */</span>  </div><div class="line"><span class="selector-tag">background-color</span><span class="selector-pseudo">:orange</span>\9\0;<span class="comment">/*IE9, IE10*/</span>  </div><div class="line">_<span class="selector-tag">background-color</span><span class="selector-pseudo">:green</span>; <span class="comment">/* Only works in IE6 */</span></div></pre></td></tr></table></figure>
 <ul>
-<li><p>选择器前缀法<br><code>*</code>前缀只对IE6有效；<br><code>*+</code>前缀只对IE7有效；</p>
-</li>
-<li><p>用JavaScript判断ie版本：</p>
-</li>
+<li>选择器前缀法<br><code>*</code>前缀只对IE6有效；<br><code>*+</code>前缀只对IE7有效；</li>
 </ul>
-<p>IE浏览器png背景透明<br><a href="http://www.haorooms.com/post/IE6_tt" target="_blank" rel="external">http://www.haorooms.com/post/IE6_tt</a></p>
+<blockquote>
+<p>使用工具 <a href="http://browserhacks.com/" target="_blank" rel="external">browserhacks</a></p>
+</blockquote>
+<ul>
+<li>渐进增强和优雅降级</li>
+</ul>
+<blockquote>
+<p>渐进增强：项目一开始就考虑低版本浏览器的兼容性，保证最基本的功能，再对高级浏览器进行效果改进。<br>优雅降级：一开始就构建完整的功能，完成后再进行低版本浏览器兼容；</p>
+</blockquote>
+<h3 id="兼容性的解决方法"><a href="#兼容性的解决方法" class="headerlink" title="兼容性的解决方法"></a>兼容性的解决方法</h3><p>使用<a href="http://caniuse.com/" target="_blank" rel="external">can i use</a>查看存在的兼容性问题–所有版本<br>用google百度 查询 IE bug的解决办法；<br>如：inline-block；IE只支持把inline元素变成inline-block元素；IE对hover的支持也有问题；<br>对待IE bug的态度：</p>
+<blockquote>
+<p>无穷无尽，因为渲染标准不同；遇到一个解决一个；多调试，IE调试方法,可以加border看边界；<br><a href="https://segmentfault.com/a/1190000000468565" target="_blank" rel="external">常见网页兼容性问题的解决方法</a><br><a href="http://www.haorooms.com/post/IE6_tt" target="_blank" rel="external">IE浏览器png背景透明</a></p>
+</blockquote>
 
       
     </div>
@@ -504,7 +504,7 @@ IE条件注释法（HTML头部引用if IE；IE专有的hack方式，Microsoft官
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-hack"><span class="nav-number">1.</span> <span class="nav-text">CSS hack</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-hack"><span class="nav-number">1.</span> <span class="nav-text">CSS hack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性的解决方法"><span class="nav-number">2.</span> <span class="nav-text">兼容性的解决方法</span></a></li></ol></div>
             
           </div>
         </section>
