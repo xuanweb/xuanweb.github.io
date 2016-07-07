@@ -248,6 +248,131 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/02/正则表达式/" itemprop="url">
+                  正则表达式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-02T23:31:41+08:00" content="2016-07-02">
+              2016-07-02
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/02/正则表达式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/02/正则表达式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="js中字符串常用操作"><a href="#js中字符串常用操作" class="headerlink" title="js中字符串常用操作"></a>js中字符串常用操作</h3><ul>
+<li>search 查找</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> str=<span class="string">'abcDedf'</span>;</div><div class="line"><span class="built_in">console</span>.log(str.search(<span class="string">'a'</span>));  <span class="comment">//返回0，从0开始</span></div><div class="line"><span class="built_in">console</span>.log(str.search(<span class="string">'bc'</span>)); <span class="comment">//返回1，这个1是bc出现的位置，search只找第一次出现的位置</span></div><div class="line"><span class="built_in">console</span>.log(str.search(<span class="string">'g'</span>)); <span class="comment">//-1,返回要查找的字符串第一次出现的位置，没有返回-1</span></div><div class="line"><span class="built_in">console</span>.log(str.search(<span class="regexp">/d/i</span>));   <span class="comment">//返回3,i忽略大小写</span></div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/02/正则表达式/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/02/为什么img、input等内联元素可以设置宽、高/" itemprop="url">
                   为什么img、input等内联元素可以设置宽高
                 </a>
@@ -753,8 +878,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/30/模块化轮播/" itemprop="url">
-                  模块化轮播
+                <a class="post-title-link" href="/2016/07/01/模块化dialog/" itemprop="url">
+                  模块化dialog
                 </a>
               
             
@@ -767,8 +892,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-30T23:12:27+08:00" content="2016-06-30">
-              2016-06-30
+            <time itemprop="dateCreated" datetime="2016-07-01T08:12:27+08:00" content="2016-07-01">
+              2016-07-01
             </time>
           </span>
 
@@ -797,8 +922,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/30/模块化轮播/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/30/模块化轮播/" itemprop="commentsCount"></span>
+                <a href="/2016/07/01/模块化dialog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/01/模块化dialog/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -822,157 +947,12 @@
 
       
         
-          <h4 id="普通代码实现功能"><a href="#普通代码实现功能" class="headerlink" title="普通代码实现功能"></a>普通代码实现功能</h4><p>最开始的时候，是这样写一个轮播的：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- html --&gt;</div><div class="line">&lt;div class="carousel"&gt;</div><div class="line">  &lt;ul class="img-ct"&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/1.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/2.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/3.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/4.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/3.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/4.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">  &lt;a class="pre arrow" href="#"&gt;&lt;&lt;/a&gt;</div><div class="line">  &lt;a class="next arrow" href="#"&gt;&gt;&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/30/模块化轮播/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/29/接触js中的面向对象/" itemprop="url">
-                  接触js中的面向对象
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-29T11:53:16+08:00" content="2016-06-29">
-              2016-06-29
-            </time>
-          </span>
-
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/29/接触js中的面向对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/29/接触js中的面向对象/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="类型和实例"><a href="#类型和实例" class="headerlink" title="类型和实例"></a>类型和实例</h3><blockquote>
-<p>类型是实例的模板，实例从类型中<code>new</code>出</p>
+            <blockquote>
+<p>前面写了篇文章“模块化轮播”，这里通过面向对象的思维来写dialog，后面会改为jquery插件；<br>通过上一篇文章后，这里用面向对象的方法来写就不那么困难了。</p>
 </blockquote>
-<p>类型：</p>
-<ul>
-<li>简单类型<ul>
-<li>Number</li>
-<li>Boolean</li>
-<li>String</li>
-<li>Null</li>
-<li>Undefined</li>
-</ul>
-</li>
-<li>复杂类型object<ul>
-<li>Array</li>
-<li>Date</li>
-<li>Function</li>
-</ul>
-</li>
-</ul>
-<p>实例</p>
-<ul>
-<li>new Array(a,b)：
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/29/接触js中的面向对象/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dialog</span>(<span class="params"> title,content </span>) </span>&#123; <span class="comment">//构造函数</span></div><div class="line">  <span class="keyword">this</span>.title = title;</div><div class="line">  <span class="keyword">this</span>.content = content;</div><div class="line">  </div><div class="line">  <span class="keyword">this</span>.init();</div><div class="line">  $(<span class="string">'.cover'</span>).height($(<span class="built_in">document</span>).height());</div><div class="line">&#125;</div><div class="line"></div><div class="line">Dialog.prototype = &#123;</div><div class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 创建DOM结构</span></div><div class="line">    <span class="keyword">var</span> html =<span class="string">''</span>;</div><div class="line">    html+=<span class="string">'&lt;div class="dialog clearfix"&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="header"&gt;'</span>+</div><div class="line">    <span class="string">'&lt;span class="title"&gt;'</span>+<span class="keyword">this</span>.title+<span class="string">'&lt;/span&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="close"&gt;x&lt;/div&gt;'</span>+</div><div class="line">    <span class="string">'&lt;/div&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="content"&gt;'</span>+<span class="keyword">this</span>.content+</div><div class="line">    <span class="string">'&lt;/div&gt;&lt;/div&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="cover"&gt;&lt;/div&gt;'</span>;</div><div class="line"></div><div class="line">    <span class="comment">//插入DOM结构</span></div><div class="line">    $(<span class="string">'body'</span>).append(html);  <span class="comment">//插入DOM结构</span></div><div class="line">    <span class="keyword">this</span>.bind();</div><div class="line">      </div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  bind: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span>;  <span class="comment">//存储this</span></div><div class="line">    $(<span class="string">'.dialog .close'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      _this.hide();</div><div class="line">    &#125;);</div><div class="line">    $(<span class="string">'.dialog'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//阻止冒泡</span></div><div class="line">    &#125;);</div><div class="line">    $(<span class="built_in">document</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      _this.hide();</div><div class="line">    &#125;);</div><div class="line">  &#125;,</div><div class="line">  show: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'.dialog'</span>).show();</div><div class="line">  &#125;,</div><div class="line">  hide: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'.dialog,.cover'</span>).hide();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
         
       
     </div>
@@ -1044,7 +1024,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1061,7 +1041,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

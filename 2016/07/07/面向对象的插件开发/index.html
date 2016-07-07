@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="插件,面向对象," />
 
 
 
@@ -84,15 +84,22 @@
 
 
 
-<meta name="description" content="“生”只有一次">
-<meta property="og:type" content="website">
-<meta property="og:title" content="前端记忆">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta name="description" content="前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；
+
+123456789101112131415161718192021;(function($, window, document,undefined) &amp;#123;    //定义Beautifier的构造函数    var Beautifier =">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象的插件开发">
+<meta property="og:url" content="http://yoursite.com/2016/07/07/面向对象的插件开发/index.html">
 <meta property="og:site_name" content="前端记忆">
-<meta property="og:description" content="“生”只有一次">
+<meta property="og:description" content="前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；
+
+123456789101112131415161718192021;(function($, window, document,undefined) &amp;#123;    //定义Beautifier的构造函数    var Beautifier =">
+<meta property="og:updated_time" content="2016-07-07T08:20:59.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端记忆">
-<meta name="twitter:description" content="“生”只有一次">
+<meta name="twitter:title" content="面向对象的插件开发">
+<meta name="twitter:description" content="前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；
+
+123456789101112131415161718192021;(function($, window, document,undefined) &amp;#123;    //定义Beautifier的构造函数    var Beautifier =">
 
 
 
@@ -113,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/page/3/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/07/面向对象的插件开发/"/>
 
-  <title> 前端记忆 </title>
+  <title> 面向对象的插件开发 | 前端记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,9 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -225,9 +230,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -247,10 +252,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/06/30/模块化轮播/" itemprop="url">
-                  模块化轮播
-                </a>
+                面向对象的插件开发
               
             
           </h1>
@@ -262,8 +264,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-30T23:12:27+08:00" content="2016-06-30">
-              2016-06-30
+            <time itemprop="dateCreated" datetime="2016-07-07T16:04:20+08:00" content="2016-07-07">
+              2016-07-07
             </time>
           </span>
 
@@ -292,8 +294,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/30/模块化轮播/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/30/模块化轮播/" itemprop="commentsCount"></span>
+                <a href="/2016/07/07/面向对象的插件开发/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/07/面向对象的插件开发/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -316,315 +318,66 @@
       
 
       
-        
-          <h4 id="普通代码实现功能"><a href="#普通代码实现功能" class="headerlink" title="普通代码实现功能"></a>普通代码实现功能</h4><p>最开始的时候，是这样写一个轮播的：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;!-- html --&gt;</div><div class="line">&lt;div class="carousel"&gt;</div><div class="line">  &lt;ul class="img-ct"&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/1.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/2.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/3.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/4.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/3.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">    &lt;li&gt;&lt;a href="#"&gt;&lt;img src="imgs/4.jpg"&gt;&lt;/a&gt;&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">  &lt;a class="pre arrow" href="#"&gt;&lt;&lt;/a&gt;</div><div class="line">  &lt;a class="next arrow" href="#"&gt;&gt;&lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/30/模块化轮播/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/29/接触js中的面向对象/" itemprop="url">
-                  接触js中的面向对象
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-29T11:53:16+08:00" content="2016-06-29">
-              2016-06-29
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/29/接触js中的面向对象/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/29/接触js中的面向对象/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="类型和实例"><a href="#类型和实例" class="headerlink" title="类型和实例"></a>类型和实例</h3><blockquote>
-<p>类型是实例的模板，实例从类型中<code>new</code>出</p>
+        <blockquote>
+<p>前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；<br>为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；</p>
 </blockquote>
-<p>类型：</p>
-<ul>
-<li>简单类型<ul>
-<li>Number</li>
-<li>Boolean</li>
-<li>String</li>
-<li>Null</li>
-<li>Undefined</li>
-</ul>
-</li>
-<li>复杂类型object<ul>
-<li>Array</li>
-<li>Date</li>
-<li>Function</li>
-</ul>
-</li>
-</ul>
-<p>实例</p>
-<ul>
-<li>new Array(a,b)：
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/29/接触js中的面向对象/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">$, window, document,undefined</span>) </span>&#123;</div><div class="line">    <span class="comment">//定义Beautifier的构造函数</span></div><div class="line">    <span class="keyword">var</span> Beautifier = <span class="function"><span class="keyword">function</span>(<span class="params">ele, opt</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.$element = ele,</div><div class="line">        <span class="keyword">this</span>.defaults = &#123;&#125;,</div><div class="line">        <span class="keyword">this</span>.options = $.extend(&#123;&#125;, <span class="keyword">this</span>.defaults, opt)</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//定义Beautifier的方法</span></div><div class="line">    Beautifier.prototype = &#123;</div><div class="line">        beautify: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.$element.css(&#123;&#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//在插件中使用Beautifier对象</span></div><div class="line">    $.fn.myPlugin = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</div><div class="line">        <span class="comment">//创建Beautifier的实体</span></div><div class="line">        <span class="keyword">var</span> beautifier = <span class="keyword">new</span> Beautifier(<span class="keyword">this</span>, options);</div><div class="line">        <span class="comment">//调用其方法</span></div><div class="line">        <span class="keyword">return</span> beautifier.beautify();</div><div class="line">    &#125;</div><div class="line">&#125;)(jQuery, <span class="built_in">window</span>, <span class="built_in">document</span>);</div></pre></td></tr></table></figure>
+<p>调用方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'a'</span>).myPlugin(&#123;</div><div class="line">        <span class="string">'color'</span>: <span class="string">'#2C9929'</span>,</div><div class="line">        <span class="string">'fontSize'</span>: <span class="string">'20px'</span></div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/28/前端笔记开始/" itemprop="url">
-                  前端笔记开始
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-28T19:42:59+08:00" content="2016-06-28">
-              2016-06-28
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/插件/" rel="tag">#插件</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/28/前端笔记开始/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/28/前端笔记开始/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/面向对象/" rel="tag">#面向对象</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <blockquote>
-<p>努力+学习！</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/28/前端笔记开始/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/05/写jQuery插件/" rel="next" title="写jQuery插件">
+                <i class="fa fa-chevron-left"></i> 写jQuery插件
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -632,6 +385,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/07/面向对象的插件开发/"
+           data-title="面向对象的插件开发" data-url="http://yoursite.com/2016/07/07/面向对象的插件开发/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -651,8 +412,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -702,6 +472,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -794,6 +575,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
