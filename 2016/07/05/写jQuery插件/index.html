@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="页面高度," />
+  <meta name="keywords" content="插件," />
 
 
 
@@ -84,16 +84,31 @@
 
 
 
-<meta name="description" content="jQuery获取:1234567891011121314$(window).height();    //获取可视区域的高度$(window).width();    //获取可视区域的宽度  $(document).height();   //获取整个页面的高度$(document).width();  //获取整个页面的宽度 $(document.body).height();  //浏览器当">
+<meta name="description" content="开发方式
+通过$.extend()来扩展jQuery
+通过$.fn 向jQuery添加新的方法
+
+$.extend()
+使用jQuery.extend(object)来扩展，可以理解为 jQuery 添加静态方法。调用:通过$.extend()添加的函数时直接通过$符号调用$.sayHello()而不需要选中DOM元素$(&amp;#39;#example&amp;#39;).sayHello()。这种方式用来定">
 <meta property="og:type" content="article">
-<meta property="og:title" content="获取页面高度和宽度">
-<meta property="og:url" content="http://yoursite.com/2016/07/01/获取页面高度和宽度/index.html">
+<meta property="og:title" content="写jQuery插件">
+<meta property="og:url" content="http://yoursite.com/2016/07/05/写jQuery插件/index.html">
 <meta property="og:site_name" content="前端记忆">
-<meta property="og:description" content="jQuery获取:1234567891011121314$(window).height();    //获取可视区域的高度$(window).width();    //获取可视区域的宽度  $(document).height();   //获取整个页面的高度$(document).width();  //获取整个页面的宽度 $(document.body).height();  //浏览器当">
-<meta property="og:updated_time" content="2016-07-03T11:16:10.419Z">
+<meta property="og:description" content="开发方式
+通过$.extend()来扩展jQuery
+通过$.fn 向jQuery添加新的方法
+
+$.extend()
+使用jQuery.extend(object)来扩展，可以理解为 jQuery 添加静态方法。调用:通过$.extend()添加的函数时直接通过$符号调用$.sayHello()而不需要选中DOM元素$(&amp;#39;#example&amp;#39;).sayHello()。这种方式用来定">
+<meta property="og:updated_time" content="2016-07-07T07:27:38.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="获取页面高度和宽度">
-<meta name="twitter:description" content="jQuery获取:1234567891011121314$(window).height();    //获取可视区域的高度$(window).width();    //获取可视区域的宽度  $(document).height();   //获取整个页面的高度$(document).width();  //获取整个页面的宽度 $(document.body).height();  //浏览器当">
+<meta name="twitter:title" content="写jQuery插件">
+<meta name="twitter:description" content="开发方式
+通过$.extend()来扩展jQuery
+通过$.fn 向jQuery添加新的方法
+
+$.extend()
+使用jQuery.extend(object)来扩展，可以理解为 jQuery 添加静态方法。调用:通过$.extend()添加的函数时直接通过$符号调用$.sayHello()而不需要选中DOM元素$(&amp;#39;#example&amp;#39;).sayHello()。这种方式用来定">
 
 
 
@@ -114,9 +129,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/01/获取页面高度和宽度/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/07/05/写jQuery插件/"/>
 
-  <title> 获取页面高度和宽度 | 前端记忆 </title>
+  <title> 写jQuery插件 | 前端记忆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -246,7 +261,7 @@
             
             
               
-                获取页面高度和宽度
+                写jQuery插件
               
             
           </h1>
@@ -258,8 +273,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-01T17:37:22+08:00" content="2016-07-01">
-              2016-07-01
+            <time itemprop="dateCreated" datetime="2016-07-05T09:11:35+08:00" content="2016-07-05">
+              2016-07-05
             </time>
           </span>
 
@@ -288,8 +303,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/01/获取页面高度和宽度/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/01/获取页面高度和宽度/" itemprop="commentsCount"></span>
+                <a href="/2016/07/05/写jQuery插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/05/写jQuery插件/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -312,10 +327,27 @@
       
 
       
-        <h2 id="jQuery获取"><a href="#jQuery获取" class="headerlink" title="jQuery获取:"></a>jQuery获取:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">window</span>).height();    <span class="comment">//获取可视区域的高度</span></div><div class="line">$(<span class="built_in">window</span>).width();    <span class="comment">//获取可视区域的宽度</span></div><div class="line">  </div><div class="line">$(<span class="built_in">document</span>).height();   <span class="comment">//获取整个页面的高度</span></div><div class="line">$(<span class="built_in">document</span>).width();  <span class="comment">//获取整个页面的宽度</span></div><div class="line"> </div><div class="line">$(<span class="built_in">document</span>.body).height();  <span class="comment">//浏览器当前窗口文档body的高度</span></div><div class="line">$(<span class="built_in">document</span>.body).width();  <span class="comment">//浏览器当前窗口文档body的宽度</span></div><div class="line">  </div><div class="line">$(<span class="built_in">document</span>).scrollTop();   <span class="comment">//获取滚动条到顶部的垂直高度</span></div><div class="line">$(<span class="built_in">document</span>).scrollLeft();  <span class="comment">//获取滚动条到左边的垂直宽度</span></div><div class="line">  </div><div class="line">$(obj).width();  <span class="comment">//获取或设置元素的宽度</span></div><div class="line">$(obj).height();  <span class="comment">//获取或设置元素的高度</span></div></pre></td></tr></table></figure>
+        <h3 id="开发方式"><a href="#开发方式" class="headerlink" title="开发方式"></a>开发方式</h3><ul>
+<li>通过$.extend()来扩展jQuery</li>
+<li>通过$.fn 向jQuery添加新的方法</li>
+</ul>
+<h3 id="extend"><a href="#extend" class="headerlink" title="$.extend()"></a>$.extend()</h3><blockquote>
+<p>使用<code>jQuery.extend(object)</code>来扩展，可以理解为 jQuery 添加静态方法。<br>调用:通过<code>$.extend()</code>添加的函数时直接通过$符号调用<code>$.sayHello()</code>而不需要选中DOM元素<code>$(&#39;#example&#39;).sayHello()</code>。这种方式用来定义一些辅助方法是比较方便的。</p>
+</blockquote>
 <a id="more"></a>
-<h2 id="width-innerWidth-outerWidth-获取元素的宽和区别："><a href="#width-innerWidth-outerWidth-获取元素的宽和区别：" class="headerlink" title="width()/innerWidth()/outerWidth()  获取元素的宽和区别："></a>width()/innerWidth()/outerWidth()  获取元素的宽和区别：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    alert( $(<span class="string">'div'</span>).width() );  <span class="comment">//width</span></div><div class="line">    alert( $(<span class="string">'div'</span>).innerWidth() );  <span class="comment">//width + padding</span></div><div class="line">    alert( $(<span class="string">'div'</span>).outerWidth() );  <span class="comment">//width + padding + border</span></div><div class="line">    alert( $(<span class="string">'div'</span>).outerWidth(<span class="literal">true</span>) );  <span class="comment">//width + padding + border + margin</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h2 id="javascript获取："><a href="#javascript获取：" class="headerlink" title="javascript获取："></a>javascript获取：</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">网页可见区域宽：<span class="built_in">document</span>.body.clientWidth</div><div class="line">网页可见区域高：<span class="built_in">document</span>.body.clientHeight</div><div class="line">网页可见区域宽：<span class="built_in">document</span>.body.offsetWidth(包括边线的宽)</div><div class="line">网页可见区域高：<span class="built_in">document</span>.body.offsetHeight(包括边线的宽)</div><div class="line"> </div><div class="line">网页正文全文宽：<span class="built_in">document</span>.body.scrollWidth</div><div class="line">网页正文全文高：<span class="built_in">document</span>.body.scrollHeight</div><div class="line"> </div><div class="line">网页被卷去的高：<span class="built_in">document</span>.body.scrollTop(IE7无效)</div><div class="line">网页被卷去的左：<span class="built_in">document</span>.body.scrollLeft(IE7无效)</div><div class="line">网页被卷去的高：<span class="built_in">document</span>.documentElement.scrollTop(IE7有效)</div><div class="line">网页被卷去的左：<span class="built_in">document</span>.documentElement.scrollLeft(IE7有效)</div><div class="line"> </div><div class="line">网页正文部分上：<span class="built_in">window</span>.screenTop</div><div class="line">网页正文部分左：<span class="built_in">window</span>.screenLeft</div><div class="line"> </div><div class="line">屏幕分辨率的高：<span class="built_in">window</span>.screen.height</div><div class="line">屏幕分辨率的宽：<span class="built_in">window</span>.screen.width</div><div class="line">屏幕可用工作区高度：<span class="built_in">window</span>.screen.availHeight</div><div class="line">屏幕可用工作区宽度：<span class="built_in">window</span>.screen.availWidth</div><div class="line"> </div><div class="line">相对于窗口左上角的X：<span class="built_in">window</span>.event.clientX</div><div class="line">相对于窗口左上角的Y：<span class="built_in">window</span>.event.clientY</div><div class="line">相对于整个页面的X：<span class="built_in">window</span>.event.X</div><div class="line">相对于整个页面的Y：<span class="built_in">window</span>.event.Y</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$.extend(&#123;</div><div class="line">    sayHello: <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello,'</span> + (name ? name : <span class="string">'Dude'</span>) + <span class="string">'!'</span>);</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">$.sayHello(); <span class="comment">//调用  "Hello,Dude!"</span></div><div class="line">$.sayHello(<span class="string">'Wayou'</span>); <span class="comment">//带参调用  "Hello,Wayou!"</span></div></pre></td></tr></table></figure>
+<h4 id="extend-方法"><a href="#extend-方法" class="headerlink" title="$.extend()方法"></a>$.extend()方法</h4><blockquote>
+<p>$.extend(dest,src1,src2,src3…);</p>
+</blockquote>
+<p> 它的含义是将src1,src2,src3…合并到dest中,返回值为合并后的dest,由此可以看出该方法合并后，是修改了dest的结构的。如果想要得到合并的结果却又不想修改dest的结构:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newSrc=$.extend(&#123;&#125;,src1,src2,src3...)</div></pre></td></tr></table></figure></p>
+<h3 id="fn-pluginName"><a href="#fn-pluginName" class="headerlink" title="$.fn.pluginName()"></a>$.fn.pluginName()</h3><h4 id="通用写法"><a href="#通用写法" class="headerlink" title="通用写法"></a>通用写法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">$, window, document,undefined</span>) </span>&#123;  <span class="comment">//最开始的分号，那是为了避免代码合并等不必要的错误</span></div><div class="line">  $.fn.pluginName = <span class="function"><span class="keyword">function</span>(<span class="params"> options </span>)</span>&#123;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> defaults = &#123;&#125;;  <span class="comment">// 各种默认属性和参数</span></div><div class="line"></div><div class="line">      <span class="keyword">var</span> settings = $.extend(&#123;&#125;,defaults, options); <span class="comment">//将一个空对象做为第一个参数；将defaults和options参数合并，并且options参数会覆盖defaults参数，然后把最后合并的结果赋给settings;</span></div><div class="line"></div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  <span class="comment">//return的作用是支持链式操作</span></div><div class="line">          <span class="comment">//对每个元素进行操作  注意this要用美元符号包装 $(this)</span></div><div class="line">      &#125;); </div><div class="line"></div><div class="line">  &#125;;</div><div class="line">&#125;)(jQuery, <span class="built_in">window</span>, <span class="built_in">document</span>);</div></pre></td></tr></table></figure>
+<p>注意说明</p>
+<ul>
+<li>在插件名字定义的这个函数内部，<code>this已经指的就是jQuery对象了</code>，不需要再用美元符号来包装一下，一般是一个jQuery类型的集合。</li>
+<li>既然<code>this</code>指代jQuery选择器返回的集合，那么通过调用jQuery的<code>.each()</code>方法就可以处理合集中的每个元素了，但此刻要注意的是，在each方法内部，<code>this指带的是普通的DOM元素了</code>，如果需要调用jQuery的方法那就需要用<code>$</code>来重新包装一下。</li>
+<li>为了保护好默认参数，一个好的做法是将一个新的空对象做为$.extend的第一个参数，defaults和用户传递的参数对象紧随其后，这样做的好处是所有值被合并到这个空对象上，保护了插件里面的默认值。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$.fn.myPlugin = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> defaults = &#123;</div><div class="line">        <span class="string">'color'</span>: <span class="string">'red'</span>,</div><div class="line">        <span class="string">'fontSize'</span>: <span class="string">'12px'</span></div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">var</span> settings = $.extend(&#123;&#125;,defaults, options);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.css(&#123;</div><div class="line">        <span class="string">'color'</span>: settings.color,</div><div class="line">        <span class="string">'fontSize'</span>: settings.fontSize</div><div class="line">    &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用</span></div><div class="line">$(<span class="string">'a'</span>).myPlugin(&#123;</div><div class="line">    <span class="string">'color'</span>: <span class="string">'green'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -337,7 +369,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/页面高度/" rel="tag">#页面高度</a>
+            <a href="/tags/插件/" rel="tag">#插件</a>
           
         </div>
       
@@ -346,17 +378,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/07/01/CSS3动画实现3D轮播/" rel="next" title="CSS3动画实现3D立方体和3D轮播">
-                <i class="fa fa-chevron-left"></i> CSS3动画实现3D立方体和3D轮播
+              <a href="/2016/07/04/浏览器兼容性处理/" rel="next" title="浏览器兼容性处理">
+                <i class="fa fa-chevron-left"></i> 浏览器兼容性处理
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/07/02/为什么img、input等内联元素可以设置宽、高/" rel="prev" title="为什么img、input等内联元素可以设置宽高">
-                为什么img、input等内联元素可以设置宽高 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -382,8 +410,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/07/01/获取页面高度和宽度/"
-           data-title="获取页面高度和宽度" data-url="http://yoursite.com/2016/07/01/获取页面高度和宽度/">
+      <div class="ds-thread" data-thread-key="2016/07/05/写jQuery插件/"
+           data-title="写jQuery插件" data-url="http://yoursite.com/2016/07/05/写jQuery插件/">
       </div>
     
   </div>
@@ -474,7 +502,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#jQuery获取"><span class="nav-number">1.</span> <span class="nav-text">jQuery获取:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#width-innerWidth-outerWidth-获取元素的宽和区别："><span class="nav-number">2.</span> <span class="nav-text">width()/innerWidth()/outerWidth()  获取元素的宽和区别：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#javascript获取："><span class="nav-number">3.</span> <span class="nav-text">javascript获取：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#开发方式"><span class="nav-number">1.</span> <span class="nav-text">开发方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#extend"><span class="nav-number">2.</span> <span class="nav-text">$.extend()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#extend-方法"><span class="nav-number">2.1.</span> <span class="nav-text">$.extend()方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fn-pluginName"><span class="nav-number">3.</span> <span class="nav-text">$.fn.pluginName()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通用写法"><span class="nav-number">3.1.</span> <span class="nav-text">通用写法</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
