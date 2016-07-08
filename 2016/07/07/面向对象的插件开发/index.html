@@ -94,7 +94,7 @@
 <meta property="og:description" content="前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；
 
 123456789101112131415161718192021;(function($, window, document,undefined) &amp;#123;    //定义Beautifier的构造函数    var Beautifier =">
-<meta property="og:updated_time" content="2016-07-07T08:20:59.030Z">
+<meta property="og:updated_time" content="2016-07-08T09:01:23.109Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="面向对象的插件开发">
 <meta name="twitter:description" content="前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；
@@ -322,7 +322,8 @@
 <p>前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；<br>为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">$, window, document,undefined</span>) </span>&#123;</div><div class="line">    <span class="comment">//定义Beautifier的构造函数</span></div><div class="line">    <span class="keyword">var</span> Beautifier = <span class="function"><span class="keyword">function</span>(<span class="params">ele, opt</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.$element = ele,</div><div class="line">        <span class="keyword">this</span>.defaults = &#123;&#125;,</div><div class="line">        <span class="keyword">this</span>.options = $.extend(&#123;&#125;, <span class="keyword">this</span>.defaults, opt)</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//定义Beautifier的方法</span></div><div class="line">    Beautifier.prototype = &#123;</div><div class="line">        beautify: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.$element.css(&#123;&#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//在插件中使用Beautifier对象</span></div><div class="line">    $.fn.myPlugin = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</div><div class="line">        <span class="comment">//创建Beautifier的实体</span></div><div class="line">        <span class="keyword">var</span> beautifier = <span class="keyword">new</span> Beautifier(<span class="keyword">this</span>, options);</div><div class="line">        <span class="comment">//调用其方法</span></div><div class="line">        <span class="keyword">return</span> beautifier.beautify();</div><div class="line">    &#125;</div><div class="line">&#125;)(jQuery, <span class="built_in">window</span>, <span class="built_in">document</span>);</div></pre></td></tr></table></figure>
-<p>调用方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'a'</span>).myPlugin(&#123;</div><div class="line">        <span class="string">'color'</span>: <span class="string">'#2C9929'</span>,</div><div class="line">        <span class="string">'fontSize'</span>: <span class="string">'20px'</span></div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>调用方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'a'</span>).Dialogkuang(&#123;</div><div class="line">        <span class="string">'color'</span>: <span class="string">'#2C9929'</span>,</div><div class="line">        <span class="string">'fontSize'</span>: <span class="string">'20px'</span></div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>参考<a href="http://www.cnblogs.com/Wayou/p/jquery_plugin_tutorial.html" target="_blank" rel="external">jQuery插件开发精品教程，让你的jQuery提升一个台阶</a></p>
 
       
     </div>
@@ -450,7 +451,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

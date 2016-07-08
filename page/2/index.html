@@ -878,8 +878,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/07/01/模块化dialog/" itemprop="url">
-                  模块化dialog
+                <a class="post-title-link" href="/2016/07/01/组件化dialog/" itemprop="url">
+                  组件化dialog
                 </a>
               
             
@@ -922,8 +922,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/07/01/模块化dialog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/01/模块化dialog/" itemprop="commentsCount"></span>
+                <a href="/2016/07/01/组件化dialog/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/01/组件化dialog/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -947,12 +947,14 @@
 
       
         
-          
-            <blockquote>
-<p>前面写了篇文章“模块化轮播”，这里通过面向对象的思维来写dialog，后面会改为jquery插件；<br>通过上一篇文章后，这里用面向对象的方法来写就不那么困难了。</p>
+          <blockquote>
+<p>前面写了篇文章“组件化轮播”，这里通过面向对象的思维来写dialog，后面会改为jquery插件；</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dialog</span>(<span class="params"> title,content </span>) </span>&#123; <span class="comment">//构造函数</span></div><div class="line">  <span class="keyword">this</span>.title = title;</div><div class="line">  <span class="keyword">this</span>.content = content;</div><div class="line">  </div><div class="line">  <span class="keyword">this</span>.init();</div><div class="line">  $(<span class="string">'.cover'</span>).height($(<span class="built_in">document</span>).height());</div><div class="line">&#125;</div><div class="line"></div><div class="line">Dialog.prototype = &#123;</div><div class="line">  init: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">    <span class="comment">// 创建DOM结构</span></div><div class="line">    <span class="keyword">var</span> html =<span class="string">''</span>;</div><div class="line">    html+=<span class="string">'&lt;div class="dialog clearfix"&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="header"&gt;'</span>+</div><div class="line">    <span class="string">'&lt;span class="title"&gt;'</span>+<span class="keyword">this</span>.title+<span class="string">'&lt;/span&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="close"&gt;x&lt;/div&gt;'</span>+</div><div class="line">    <span class="string">'&lt;/div&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="content"&gt;'</span>+<span class="keyword">this</span>.content+</div><div class="line">    <span class="string">'&lt;/div&gt;&lt;/div&gt;'</span>+</div><div class="line">    <span class="string">'&lt;div class="cover"&gt;&lt;/div&gt;'</span>;</div><div class="line"></div><div class="line">    <span class="comment">//插入DOM结构</span></div><div class="line">    $(<span class="string">'body'</span>).append(html);  <span class="comment">//插入DOM结构</span></div><div class="line">    <span class="keyword">this</span>.bind();</div><div class="line">      </div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  bind: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span>;  <span class="comment">//存储this</span></div><div class="line">    $(<span class="string">'.dialog .close'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      _this.hide();</div><div class="line">    &#125;);</div><div class="line">    $(<span class="string">'.dialog'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">//阻止冒泡</span></div><div class="line">    &#125;);</div><div class="line">    $(<span class="built_in">document</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      _this.hide();</div><div class="line">    &#125;);</div><div class="line">  &#125;,</div><div class="line">  show: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'.dialog'</span>).show();</div><div class="line">  &#125;,</div><div class="line">  hide: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    $(<span class="string">'.dialog,.cover'</span>).hide();</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/01/组件化dialog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -1041,7 +1043,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
