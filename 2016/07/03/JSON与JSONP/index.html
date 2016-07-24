@@ -98,7 +98,7 @@ JSON在JSON中，有两种结构：对象和数组；分别用大括号{}和方�
 概念JSON是一种数据交换格式；JSONP是一种非官方的跨域数据交互协议；
 JSON在JSON中，有两种结构：对象和数组；分别用大括号{}和方括号[]表示；
 对象：1234var person = &amp;#123; &quot;firstName&quot;:&quot;John&quot; , &quot;lastName&quot;:&quot;Doe&quot; &amp;#125;// 读取person.firstName;">
-<meta property="og:updated_time" content="2016-07-08T02:19:28.146Z">
+<meta property="og:updated_time" content="2016-07-07T07:34:24.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSON与JSONP">
 <meta name="twitter:description" content="目的：用JSON来传数据，用JSONP来跨域；
@@ -349,7 +349,7 @@ JSON在JSON中，有两种结构：对象和数组；分别用大括号{}和方�
 <blockquote>
 <p><a href="http://htmlpreview.github.io/?https://github.com/xuanweb/demo/blob/master/%E7%99%BE%E5%BA%A6%E4%B8%8B%E6%8B%89%E6%A1%86/index.html" target="_blank" rel="external">DEMO-百度下拉框提示</a></p>
 </blockquote>
-<h3 id="jQuery中JSONP的实现"><a href="#jQuery中JSONP的实现" class="headerlink" title="jQuery中JSONP的实现"></a>jQuery中JSONP的实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    $.ajax(&#123;</div><div class="line">         type: <span class="string">"get"</span>,</div><div class="line">         <span class="keyword">async</span>: <span class="literal">false</span>,</div><div class="line">         url: <span class="string">"http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998"</span>,</div><div class="line">         dataType: <span class="string">"jsonp"</span>, <span class="comment">//按照JSOPN方式访问远程服务</span></div><div class="line">         jsonpCallback:<span class="string">"flightHandler"</span>,<span class="comment">//指定回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据</span></div><div class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">             alert(<span class="string">'您查询到航班信息：票价： '</span> + data.price + <span class="string">' 元，余票： '</span> + data.tickets + <span class="string">' 张。'</span>);</div><div class="line">         &#125;,</div><div class="line">         error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">             alert(<span class="string">'fail'</span>);</div><div class="line">         &#125;</div><div class="line">     &#125;);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="jQuery中JSONP的实现"><a href="#jQuery中JSONP的实现" class="headerlink" title="jQuery中JSONP的实现"></a>jQuery中JSONP的实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    $.ajax(&#123;</div><div class="line">         type: <span class="string">"get"</span>,</div><div class="line">         <span class="keyword">async</span>: <span class="literal">false</span>,</div><div class="line">         url: <span class="string">"http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998"</span>,</div><div class="line">         dataType: <span class="string">"jsonp"</span>, <span class="comment">//按照JSOPN方式访问远程服务</span></div><div class="line">         jsonpCallback:<span class="string">"flightHandler"</span>,<span class="comment">//指定回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据</span></div><div class="line">         success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">             alert(<span class="string">'您查询到航班信息：票价： '</span> + data.price + <span class="string">' 元，余票： '</span> + data.tickets + <span class="string">' 张。'</span>);</div><div class="line">         &#125;,</div><div class="line">         error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">             alert(<span class="string">'fail'</span>);</div><div class="line">         &#125;</div><div class="line">     &#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <h3 id="工具与参考资料"><a href="#工具与参考资料" class="headerlink" title="工具与参考资料"></a>工具与参考资料</h3><p><a href="http://json.cn/" target="_blank" rel="external">在线解析和格式验证</a><br><a href="http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html" target="_blank" rel="external">说说JSON和JSONP</a><br><a href="http://www.cnblogs.com/chopper/archive/2012/03/24/2403945.html" target="_blank" rel="external">深入浅出JSONP</a></p>
 
       
@@ -469,7 +469,7 @@ JSON在JSON中，有两种结构：对象和数组；分别用大括号{}和方�
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -477,7 +477,7 @@ JSON在JSON中，有两种结构：对象和数组；分别用大括号{}和方�
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -486,7 +486,7 @@ JSON在JSON中，有两种结构：对象和数组；分别用大括号{}和方�
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

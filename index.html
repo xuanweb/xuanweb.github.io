@@ -248,6 +248,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/07/08/写一个回到顶部的插件/" itemprop="url">
+                  写一个回到顶部的插件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-08T17:54:42+08:00" content="2016-07-08">
+              2016-07-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/jquery/" itemprop="url" rel="index">
+                    <span itemprop="name">jquery</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/08/写一个回到顶部的插件/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/08/写一个回到顶部的插件/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="基本功能实现"><a href="#基本功能实现" class="headerlink" title="基本功能实现"></a>基本功能实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">'#backTop'</span>).on(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  backTop();</div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">backTop</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  $(<span class="string">'html,body'</span>).animate(&#123;scrollTop:<span class="number">0</span>&#125;,<span class="number">400</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/08/写一个回到顶部的插件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/07/07/面向对象的插件开发/" itemprop="url">
                   面向对象的插件开发
                 </a>
@@ -317,15 +439,15 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>前面写了文章“写jQuery插件”，介绍了jquery插件的基本开发方法；<br>为了让代码更加易于维护、清晰、能够复用；考虑用面向对象的思维来开发插件；</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">;(<span class="function"><span class="keyword">function</span>(<span class="params">$, window, document,undefined</span>) </span>&#123;</div><div class="line">    <span class="comment">//定义Beautifier的构造函数</span></div><div class="line">    <span class="keyword">var</span> Beautifier = <span class="function"><span class="keyword">function</span>(<span class="params">ele, opt</span>) </span>&#123;</div><div class="line">        <span class="keyword">this</span>.$element = ele,</div><div class="line">        <span class="keyword">this</span>.defaults = &#123;&#125;,</div><div class="line">        <span class="keyword">this</span>.options = $.extend(&#123;&#125;, <span class="keyword">this</span>.defaults, opt)</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//定义Beautifier的方法</span></div><div class="line">    Beautifier.prototype = &#123;</div><div class="line">        beautify: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.$element.css(&#123;&#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//在插件中使用Beautifier对象</span></div><div class="line">    $.fn.Dialogkuang = <span class="function"><span class="keyword">function</span>(<span class="params">options</span>) </span>&#123;</div><div class="line">        <span class="comment">//创建Beautifier的实体</span></div><div class="line">        <span class="keyword">var</span> beautifier = <span class="keyword">new</span> Beautifier(<span class="keyword">this</span>, options);</div><div class="line">        <span class="comment">//调用其方法</span></div><div class="line">        <span class="keyword">return</span> beautifier.beautify();</div><div class="line">    &#125;</div><div class="line">&#125;)(jQuery, <span class="built_in">window</span>, <span class="built_in">document</span>);</div></pre></td></tr></table></figure>
-<p>调用方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(<span class="string">'a'</span>).Dialogkuang(&#123;</div><div class="line">        <span class="string">'color'</span>: <span class="string">'#2C9929'</span>,</div><div class="line">        <span class="string">'fontSize'</span>: <span class="string">'20px'</span></div><div class="line">    &#125;);</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>参考<a href="http://www.cnblogs.com/Wayou/p/jquery_plugin_tutorial.html" target="_blank" rel="external">jQuery插件开发精品教程，让你的jQuery提升一个台阶</a></p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/07/07/面向对象的插件开发/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -857,130 +979,6 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/07/03/Ajax笔记/" itemprop="url">
-                  Ajax
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-07-03T09:48:09+08:00" content="2016-07-03">
-              2016-07-03
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/07/03/Ajax笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/03/Ajax笔记/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><blockquote>
-<p>Ajax（Asynchronous Javascript And XML）“异步Javascript和XML”。即使用JavaScript语言与服务器进行异步交互。Ajax最大的特点就是：当服务器响应时，不用刷新整个浏览器页面，通过局部刷新更新数据。<br>同步交互：客户端发出一个请求后，需要等待服务器响应结束后，才能发出第二个请求；<br>异步交互：客户端发出一个请求后，无需等待服务器响应结束后，就可以发出第二个请求。</p>
-</blockquote>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/07/03/Ajax笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1026,7 +1024,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">16</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1034,7 +1032,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1043,7 +1041,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
